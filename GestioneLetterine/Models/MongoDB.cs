@@ -17,6 +17,13 @@ namespace GestioneLetterine.Models
             }
         }
 
+        public IEnumerable<Toy> GetAllToysInWarehouse()
+        {
+            IMongoCollection<Toy> categoryCollection = database.GetCollection<Toy>("toy");
+            return categoryCollection.Find(new BsonDocument()).ToList();
+        }
+
+
 
     }
 }

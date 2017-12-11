@@ -7,7 +7,6 @@ using MongoDB.Bson.Serialization.Attributes;
 using System.ComponentModel.DataAnnotations;
 
 
-//NON ANCORA FINITO VEDI LISTA TOY E DATA REQUEST
 
 namespace GestioneLetterine.Models
 {
@@ -22,13 +21,13 @@ namespace GestioneLetterine.Models
         private string Kid { get; }
 
         [BsonElement("status")]
-        private decimal status { get; set; }
+        private decimal Status { get; set; }
 
-
+        [BsonElement("toys")]
         private List<Toy> Toys = new List<Toy>();
 
-        [BsonElement(BsonType.BsonDateTimeOptionsAttribute)]
-        private int requestDate { get; }
+        [BsonDateTimeOptionsAttribute()]
+        private DateTime RequestDate { get; }
 
     }
 }

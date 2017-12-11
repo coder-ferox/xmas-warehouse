@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Savings.Classes
+namespace GestioneLetterine.Models
 {
 
     public static class MongoDBConfig
