@@ -1,0 +1,2 @@
+C:\Users\Danilo\Desktop\EsercitazioneASPMVC\GestioneLetterine\Classes\obj\Debug\GestioneLetterine.Classes.csprojResolveAssemblyReference.cache
+C:\Users\Danilo\Desktop\EsercitazioneASPMVC\GestioneLetterine\Classes\obj\Debug\GestioneLetterine.Classes.csproj.CoreCompileInputs.cache

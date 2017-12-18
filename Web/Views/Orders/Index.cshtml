@@ -1,0 +1,64 @@
+﻿@using Web.Models
+@{
+    ViewBag.Title = "Orders";
+}
+@model Orders
+
+@if (Session["UserID"] != null)
+{
+    <div class="row">
+        
+            <h2 style="text-align:center;"><strong>Letters</strong></h2>
+        
+    </div>
+    if (Session["isAdmin"] != null)
+    {
+        <img src="~/Content/santa-dancing.gif" class="santa-dancing" />
+    }
+    else
+    {
+        <img src="~/Content/ziggy.gif" class="ziggy" />
+    }
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Child</th>
+                @if (Session["isAdmin"] != null)
+                {
+                    <th>Cost</th>
+                }
+                <th>Status</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.EntityList.OrderBy(order => order.RequestDate))
+            {
+                <tr>
+                    @if (Session["isAdmin"] != null)
+                    {
+                        <td>
+                            @order.Kid
+                        </td>
+                        <td>
+                            @order.Price€
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.ActionLink(order.Kid, "Detail", new { orderId = order.Id })
+                        </td>
+                    }
+                    <td>
+                        @order.GetOrderStatus()
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    Layout = "~/Views/Shared/Error.cshtml";
+}

@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.titleIcon {
+    width: 48px;
+    padding: 0 0 5px 0;
+}
+
+.titleText {
+    display: inline;
+    line-height: 1.6;
+    font-size: 1.2em;
+    color: #FFF;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #FFF;
+}
+
+.navbar-inverse {
+    background-color: #F00;
+}
+
+.navbar {
+    background-color: #F00;
+}
+
+.jumbotron {
+    background-image: url('snow.gif');
+    background-size: cover;
+    color: #FFF;
+    z-index: 100;
+}
+
+
+
+.santa-dancing {
+    right: 10px;
+    bottom: 10px;
+    
+    position: fixed;
+    width: 20%;
+}
+
+.ziggy {
+    right: 10px;
+    bottom: 10px;
+    position: fixed;
+}
+
+.welcome a{
+    color: #FFF;
+}
+
+.logout a {
+    color: #FFF;
+    display: inline;
+    line-height: 48px;
+    font-size: 1.2em;
+    font-weight: 600;
+
+
+}
+
+tr:nth-child(even) {
+    background-color: #DDD;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFF;
+}

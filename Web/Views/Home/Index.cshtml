@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Christmas Packs Management System</h2>
+    <p class="lead">When Santa Claus was better off with the analytical machine...</p>
+    <p>
+        @if (Session["UserID"] != null)
+        {
+            <div class="row" style="text-align:center;">
+                @Html.ActionLink("Letters of the Children", "Index", "Orders", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Toys Warehouse", "Index", "Toys", null, new { @class = "btn btn-warning" })
+            </div>
+        }
+        else
+        {
+            @Html.ActionLink("Login", "Login", "Users", null, new { @class = "btn btn-success" })
+        }
+    </p>
+</div>

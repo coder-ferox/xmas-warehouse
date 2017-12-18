@@ -1,0 +1,47 @@
+﻿@using GestioneLetterine.Classes
+@model Request
+
+@{
+    ViewBag.Title = "Update Order Status";
+}
+
+@if (Session["UserID"] != null && Session["isAdmin"] == null)
+{
+    <h2 style="text-align:center;">Change request status</h2>
+    <div class="row">
+
+        @using (Html.BeginForm("Save", "Orders"))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group" style="margin-left: 2px;">
+                    
+                    
+                        <select id="orderStatus" name="orderStatus" class="btn btn-default dropdown-toggle">
+                            @foreach (RequestStatus requestStatus in Enum.GetValues(typeof(RequestStatus)))
+                            {
+                                <option value="@requestStatus">@requestStatus</option> 
+                            }
+                        </select>
+                        <input type="submit" value="Save" class="btn btn-success" />
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="row">
+        @Html.ActionLink("Back", "Detail", new { orderId = Model.Id }, new { @class = "btn btn-warning" })
+    </div>
+}
+else
+{
+    Layout = "~/Views/Shared/Error.cshtml";
+}
+

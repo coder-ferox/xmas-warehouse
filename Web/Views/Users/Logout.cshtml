@@ -1,0 +1,17 @@
+﻿@model GestioneLetterine.Classes.User
+
+@{
+    ViewBag.Title = "Logout";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <img src="~/Content/byebye.gif" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 form-group" style="text-align:center;">
+        @Html.ActionLink("Change User", "Login", "Users", null, new { @class = "btn btn-success" })
+    </div>
+</div>
+
