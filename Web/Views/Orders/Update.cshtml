@@ -22,8 +22,8 @@
                 <div class="form-group" style="margin-left: 2px;">
                     
                     
-                        <select id="orderStatus" name="orderStatus" class="btn btn-default dropdown-toggle">
-                            @foreach (RequestStatus requestStatus in Enum.GetValues(typeof(RequestStatus)))
+                        <select id="requestStatus" name="requestStatus" class="btn btn-default dropdown-toggle">
+                            @foreach (var requestStatus in Enum.GetValues(typeof(RequestStatus)))
                             {
                                 <option value="@requestStatus">@requestStatus</option> 
                             }

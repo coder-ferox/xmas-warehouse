@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -18,11 +19,11 @@
                 </button>
                 @if (Session["UserID"] != null && Session["Email"] != null)
                 {
-                    @Html.ActionLink("Welcome " + Session["Username"], "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                }
+                    @Html.ActionLink("Welcome " + Session["Username"], "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "Color: #FFF;" })
+                    }
                 else
                 {
-                    @Html.ActionLink("Christmas Gifts", "", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Christmas Packs Management System", "", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "Color: #FFF;" })
                 }
             </div>
             <div class="navbar-collapse collapse">
@@ -37,10 +38,13 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hgroup>
-            <h1>:'-(</h1>
+        <div style="text-align: center; margin-top: 70px;">
+            <img src="~/Content/error.png" />
             <h2>Something went wrong... Try to login again</h2>
-        </hgroup>
+            <div>@Html.ActionLink("Login Again", "Login", "Users", null, new { @class = "btn btn-success" })</div>
+
+
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

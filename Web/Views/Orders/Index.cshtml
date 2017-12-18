@@ -1,4 +1,5 @@
 ﻿@using Web.Models
+@using Classes
 @{
     ViewBag.Title = "Orders";
 }
@@ -11,6 +12,8 @@
             <h2 style="text-align:center;"><strong>Letters</strong></h2>
         
     </div>
+    
+
     if (Session["isAdmin"] != null)
     {
         <img src="~/Content/santa-dancing.gif" class="santa-dancing" />
@@ -18,6 +21,21 @@
     else
     {
         <img src="~/Content/ziggy.gif" class="ziggy" />
+        <div class="bar">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="@Christmas.getPercGreenRounded()" aria-valuemin="0" aria-valuemax="100" style="width:@Christmas.getPercGreenRounded()%; height: 64px;">
+                    <span class="sr-only">@Christmas.getPercGreenRounded()% Complete</span>
+                </div>
+            </div>
+            @if(@Christmas.getDaysLeft() < 14)
+            {
+                <div style="font-size: 1.3em; font-weight: 600;"><center>Ziiiiiggy! Stop playing with the snow and go back to work: @Christmas.getDaysLeft() days are missing at Christmas. Santa</center></div>
+            }
+            else
+            {
+                <div style="font-size: 1.3em; font-weight: 600;"><center>Oh Oh Oh Christmas is coming...</center></div>
+            }
+            </div>
     }
     <table class="table table-hover">
         <thead>

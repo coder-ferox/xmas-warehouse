@@ -48,6 +48,19 @@ a:hover {
     z-index: 100;
 }
 
+.bar {
+    height: 64px;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.progress {
+    height: 24px;
+}
+
+.progress-bar {
+    background-color: green;
+}
 
 
 .santa-dancing {
